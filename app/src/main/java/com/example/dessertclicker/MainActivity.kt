@@ -76,6 +76,13 @@ import com.example.dessertclicker.ui.theme.DessertClickerTheme
 private const val TAG = "MainActivity"
 
 class MainActivity : ComponentActivity() {
+//    MainActivity 是应用的主活动。
+//    在 onCreate 方法中：
+//    调用 enableEdgeToEdge() 以实现全屏效果。
+//    使用 setContent 设置应用的 UI 内容。
+//    使用 DessertClickerTheme 主题包装整个应用。
+//    在 Surface 中显示 DessertClickerApp 组件。
+//    其他生命周期方法（如 onStart、onResume 等）中记录日志，用于调试。
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
@@ -132,6 +139,8 @@ fun determineDessertToShow(
     desserts: List<Dessert>,
     dessertsSold: Int
 ): Dessert {
+//    根据已销售的甜点数量 dessertsSold，确定当前应该显示的甜点。
+//    遍历 desserts 列表，找到第一个 startProductionAmount 大于 dessertsSold 的甜点，并返回其前一个甜点。
     var dessertToShow = desserts.first()
     for (dessert in desserts) {
         if (dessertsSold >= dessert.startProductionAmount) {
